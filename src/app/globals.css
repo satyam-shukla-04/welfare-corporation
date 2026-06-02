@@ -1,26 +1,97 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --background: #f8fafc;
+  --foreground: #07111f;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #020617;
+    --foreground: #f8fafc;
   }
+}
+
+* {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+  text-rendering: geometricPrecision;
+}
+
+@layer components {
+  .glass-morphism {
+    @apply border border-white/20 bg-white/70 shadow-premium backdrop-blur-2xl;
+  }
+
+  .dark .glass-morphism {
+    @apply border-white/10 bg-slate-950/70;
+  }
+
+  .premium-glass {
+    @apply border border-white/15 bg-white/[0.08] shadow-premium backdrop-blur-2xl;
+  }
+
+  .light-glass {
+    @apply border border-slate-200/70 bg-white/75 shadow-premium backdrop-blur-2xl;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-br from-white via-slate-100 to-emerald-200 bg-clip-text text-transparent;
+  }
+
+  .dark .gradient-text {
+    @apply from-white to-slate-400;
+  }
+
+  .section-padding {
+    @apply py-20 lg:py-28;
+  }
+
+  .eyebrow {
+    @apply text-xs font-bold uppercase tracking-[0.28em] text-accent;
+  }
+
+  .premium-button {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-bold text-primary shadow-premium transition-all duration-300 hover:-translate-y-0.5 hover:shadow-premium-hover active:scale-95;
+  }
+
+  .premium-button-dark {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-bold text-white shadow-premium transition-all duration-300 hover:-translate-y-0.5 hover:bg-slate-900 active:scale-95;
+  }
+}
+
+@keyframes slow-zoom {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.1); }
+}
+
+.animate-slow-zoom {
+  animation: slow-zoom 20s infinite alternate linear;
+}
+
+@keyframes float-soft {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(0, -16px, 0); }
+}
+
+.animate-float-soft {
+  animation: float-soft 7s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
 }
