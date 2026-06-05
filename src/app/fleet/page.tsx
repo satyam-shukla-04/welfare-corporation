@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import Image from "next/image";
 import { CheckCircle2, ShieldCheck, User } from "lucide-react";
@@ -39,7 +37,7 @@ const Fleet = () => {
           </div>
           <div>
             <span className="eyebrow">Operating Standards</span>
-            <h2 className="mt-5 text-4xl font-black tracking-tight text-primary md:text-6xl">Our Fleet Standards</h2>
+            <h2 className="mt-5 text-4xl font-black tracking-tight text-text-primary md:text-6xl">Our Fleet Standards</h2>
             <div className="mt-8 grid gap-4">
               {[
                 { title: "Safety First", desc: "Regular technical inspections and comprehensive insurance for all vehicles.", icon: ShieldCheck },
@@ -51,8 +49,8 @@ const Fleet = () => {
                     <item.icon size={24} />
                   </span>
                   <div>
-                    <h4 className="text-xl font-black text-primary">{item.title}</h4>
-                    <p className="mt-2 leading-7 text-slate-600">{item.desc}</p>
+                    <h4 className="text-xl font-black text-text-primary">{item.title}</h4>
+                    <p className="mt-2 leading-7 text-text-secondary">{item.desc}</p>
                   </div>
                 </div>
               ))}

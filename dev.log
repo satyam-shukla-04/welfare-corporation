@@ -1,0 +1,5 @@
+
+> welfare_corporation@0.1.0 dev
+> node --req[?25h
+scripts/node-polyfills.cjs ./node_modules/next/dist/bin/next dev
+

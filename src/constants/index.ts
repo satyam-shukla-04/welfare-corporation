@@ -3,7 +3,7 @@ export const COMPANY_NAME = "Welfare Corporation (Infratech Solution)";
 export const NAVIGATION_LINKS = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about" },
-  { label: "Solutions", href: "/solutions" },
+  { label: "Corporate Solutions", href: "/solutions" },
   { label: "Services", href: "/services" },
   { label: "Fleet", href: "/fleet" },
   { label: "Contact", href: "/contact" },
@@ -67,7 +67,7 @@ export const FLEET = [
   },
   {
     id: "traveller",
-    name: "Tempo Traveller",
+    name: " Luxury Bus sevice",
     capacity: "12-17 Passengers",
     bestFor: "Corporate Events & Team Trips",
     image: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=1600&auto=format&fit=crop",
@@ -84,7 +84,7 @@ export const CLIENT_LOGOS = [
 
 export const CONTACT_DETAILS = {
   phone: "+91-9016326561",
-  email: "info@welfarecorporation.com",
-  address: "Your Corporate Address, City, India",
+  email: "shuklsatyam6906@gmail.com",
+  address: "T-15 3rd floor SAI ASHISH TRADE CENTRE, opp. POONYABHINI, Althan, Surat, Gujarat 395007",
   whatsapp: "+919016326561",
 };

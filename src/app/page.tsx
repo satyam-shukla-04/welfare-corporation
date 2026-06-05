@@ -51,7 +51,7 @@ const StatCounter = ({ end, suffix, label, icon: Icon }: any) => {
         {count}
         {suffix}
       </div>
-      <div className="mt-3 text-xs font-bold uppercase tracking-[0.22em] text-white/50">{label}</div>
+      <div className="mt-3 text-xs font-bold uppercase tracking-[0.22em] text-text-inverse-muted">{label}</div>
     </div>
   );
 };
@@ -68,18 +68,18 @@ export default function Home() {
     <div className="flex flex-col bg-porcelain">
       <Hero />
 
-      <section className="relative overflow-hidden bg-primary py-10 text-white">
-        <BackgroundAura />
+      <section className="relative overflow-hidden bg-white py-10 text-text-primary curved-bottom">
+        <BackgroundAura light />
         <div className="container relative z-10 mx-auto px-6">
-          <div className="rounded-[2rem] border border-white/12 bg-white/[0.07] p-6 shadow-glow backdrop-blur-2xl">
-            <p className="text-center text-xs font-bold uppercase tracking-[0.3em] text-white/45">
+          <div className="rounded-[3rem] border border-primary/5 bg-porcelain/70 p-6 shadow-premium backdrop-blur-2xl">
+            <p className="text-center text-xs font-bold uppercase tracking-[0.3em] text-text-muted">
               Trusted by 150+ Leading Businesses
             </p>
             <div className="mt-6 grid grid-cols-2 gap-4 text-center sm:grid-cols-5">
               {["L&T", "Reliance", "Tata", "Adani", "HDFC"].map((client) => (
                 <span
                   key={client}
-                  className="rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-4 text-xl font-black text-white/42 grayscale transition-all hover:-translate-y-1 hover:text-white"
+                  className="rounded-2xl border border-primary/5 bg-white/80 px-5 py-4 text-xl font-black text-text-secondary grayscale transition-all hover:-translate-y-1 hover:text-primary"
                 >
                   {client}
                 </span>
@@ -98,7 +98,7 @@ export default function Home() {
               whileInView="visible"
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
-              className="relative min-h-[520px] overflow-hidden rounded-[2.5rem] bg-primary p-8 text-white shadow-premium"
+              className="relative min-h-[520px] overflow-hidden rounded-[4rem] bg-primary p-8 text-white shadow-premium"
             >
               <Image
                 src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1800&auto=format&fit=crop"
@@ -114,7 +114,7 @@ export default function Home() {
                     Corporate Transportation Expertise You Can Trust
                   </h2>
                 </div>
-                <p className="mt-16 max-w-2xl text-lg leading-8 text-white/70">
+                <p className="mt-16 max-w-2xl text-lg leading-8 text-text-inverse-soft">
                   Welfare Corporation (Infratech Solution) is a premium mobility partner dedicated to providing seamless, safe, and professional transportation solutions for the modern corporate world.
                 </p>
               </div>
@@ -131,11 +131,11 @@ export default function Home() {
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true }}
-                  className="rounded-[2rem] border border-slate-200 bg-white/80 p-8 shadow-premium backdrop-blur-2xl"
+                className="rounded-[3rem] border border-white/70 bg-white/80 p-8 shadow-premium backdrop-blur-2xl"
                 >
                   <item.icon className="mb-8 text-accent" size={32} />
-                  <div className="text-5xl font-black text-primary">{item.value}</div>
-                  <p className="mt-3 text-sm font-bold uppercase tracking-[0.2em] text-slate-500">{item.label}</p>
+                  <div className="text-5xl font-black text-text-primary">{item.value}</div>
+                  <p className="mt-3 text-sm font-bold uppercase tracking-[0.2em] text-text-muted">{item.label}</p>
                 </motion.div>
               ))}
               <Link href="/about" className="premium-button-dark">
@@ -147,7 +147,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-white curved-top curved-bottom">
         <div className="container mx-auto px-6">
           <SectionHeader
             eyebrow="Our Expertise"
@@ -174,8 +174,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-primary py-24 text-white">
-        <BackgroundAura />
+      <section className="relative overflow-hidden bg-linen py-24 text-text-primary curved-top curved-bottom">
+        <BackgroundAura light />
         <div className="container relative z-10 mx-auto px-6">
           <div className="grid gap-12 lg:grid-cols-[.9fr_1.1fr] lg:items-center">
             <div>
@@ -189,11 +189,11 @@ export default function Home() {
                 <motion.div
                   key={item.title}
                   whileHover={{ y: -6 }}
-                  className="rounded-[2rem] border border-white/12 bg-white/[0.07] p-6 shadow-premium backdrop-blur-2xl"
-                >
-                  <item.icon className="mb-8 text-accent" size={30} />
-                  <h3 className="text-xl font-black">{item.title}</h3>
-                  <p className="mt-3 text-sm leading-7 text-white/62">{item.desc}</p>
+                className="rounded-[3rem] border border-white/70 bg-white/72 p-6 shadow-premium backdrop-blur-2xl"
+              >
+                <item.icon className="mb-8 text-accent" size={30} />
+                <h3 className="text-xl font-black">{item.title}</h3>
+                  <p className="mt-3 text-sm leading-7 text-text-secondary">{item.desc}</p>
                 </motion.div>
               ))}
             </div>
@@ -222,7 +222,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-primary py-24">
+      <section className="relative overflow-hidden bg-primary py-24 curved-top curved-bottom">
         <BackgroundAura />
         <div className="container relative z-10 mx-auto px-6">
           <div className="grid grid-cols-1 gap-5 md:grid-cols-4">
@@ -239,10 +239,10 @@ export default function Home() {
           <div className="grid gap-10 lg:grid-cols-[.9fr_1.1fr] lg:items-center">
             <div>
               <span className="eyebrow">Get in Touch</span>
-              <h2 className="mt-5 text-4xl font-black tracking-tight text-primary md:text-6xl">
+              <h2 className="mt-5 text-4xl font-black tracking-tight text-text-primary md:text-6xl">
                 Ready to Upgrade Your Corporate Travel?
               </h2>
-              <p className="mt-6 max-w-xl text-lg leading-8 text-slate-600">
+              <p className="mt-6 max-w-xl text-lg leading-8 text-text-secondary">
                 Leave your details and our mobility experts will contact you with a customized solution for your business.
               </p>
               <div className="mt-10 grid gap-4">
@@ -259,10 +259,10 @@ export default function Home() {
                       <item.icon size={20} />
                     </span>
                     <span>
-                      <span className="block text-[10px] font-bold uppercase tracking-[0.24em] text-slate-400">
+                      <span className="block text-[10px] font-bold uppercase tracking-[0.24em] text-text-muted">
                         {item.label}
                       </span>
-                      <span className="mt-1 block text-lg font-black text-primary">{item.value}</span>
+                      <span className="mt-1 block text-lg font-black text-text-primary">{item.value}</span>
                     </span>
                   </a>
                 ))}

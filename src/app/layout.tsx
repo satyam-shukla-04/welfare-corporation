@@ -1,20 +1,10 @@
 import type { Metadata } from "next";
-import { Inter, Outfit } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { COMPANY_NAME } from "@/constants";
-import { CursorGlow, ScrollProgress } from "@/components/PremiumUI";
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-});
-
-const outfit = Outfit({
-  subsets: ["latin"],
-  variable: "--font-outfit",
-});
+import { CursorGlow, ScrollProgress } from "@/components/ClientEffects";
+import IntroAnimation from "@/components/IntroAnimation";
 
 export const metadata: Metadata = {
   title: `${COMPANY_NAME} | Premium Corporate Travel Solutions`,
@@ -30,7 +20,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${inter.variable} ${outfit.variable} font-sans antialiased bg-white dark:bg-premium-dark`}>
+      <body className="bg-porcelain font-sans text-text-primary antialiased">
+        <IntroAnimation />
         <ScrollProgress />
         <CursorGlow />
         <Navbar />

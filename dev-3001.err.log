@@ -1,0 +1,143 @@
+Error: Unserializable host object: ReadableStream { locked: false, state: 'readable', supportsBYOB: false }
+    at DefaultSerializer._writeHostObject (node:v8:319:15)
+    at Object.serialize (node:v8:368:7)
+    at globalThis.structuredClone (C:\welfare_corporation\scripts\node-polyfills.cjs:4:61)
+    at cloneBody (C:\welfare_corporation\node_modules\next\dist\compiled\undici\index.js:2:1890)
+    at cloneResponse (C:\welfare_corporation\node_modules\next\dist\compiled\undici\index.js:2:55920)
+    at cloneResponse (C:\welfare_corporation\node_modules\next\dist\compiled\undici\index.js:2:55815)
+    at Response.clone (C:\welfare_corporation\node_modules\next\dist\compiled\undici\index.js:2:55343)
+    at C:\welfare_corporation\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:11:404582
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+Error: Unserializable host object: ReadableStream { locked: false, state: 'readable', supportsBYOB: false }
+    at DefaultSerializer._writeHostObject (node:v8:319:15)
+    at Object.serialize (node:v8:368:7)
+    at globalThis.structuredClone (C:\welfare_corporation\scripts\node-polyfills.cjs:4:61)
+    at cloneBody (C:\welfare_corporation\node_modules\next\dist\compiled\undici\index.js:2:1890)
+    at cloneResponse (C:\welfare_corporation\node_modules\next\dist\compiled\undici\index.js:2:55920)
+    at cloneResponse (C:\welfare_corporation\node_modules\next\dist\compiled\undici\index.js:2:55815)
+    at Response.clone (C:\welfare_corporation\node_modules\next\dist\compiled\undici\index.js:2:55343)
+    at C:\welfare_corporation\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:11:404582
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+Error: Unserializable host object: ReadableStream { locked: false, state: 'readable', supportsBYOB: false }
+    at DefaultSerializer._writeHostObject (node:v8:319:15)
+    at Object.serialize (node:v8:368:7)
+    at globalThis.structuredClone (C:\welfare_corporation\scripts\node-polyfills.cjs:4:61)
+    at cloneBody (C:\welfare_corporation\node_modules\next\dist\compiled\undici\index.js:2:1890)
+    at cloneResponse (C:\welfare_corporation\node_modules\next\dist\compiled\undici\index.js:2:55920)
+    at cloneResponse (C:\welfare_corporation\node_modules\next\dist\compiled\undici\index.js:2:55815)
+    at Response.clone (C:\welfare_corporation\node_modules\next\dist\compiled\undici\index.js:2:55343)
+    at C:\welfare_corporation\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:11:404582
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+Error: Unserializable host object: ReadableStream { locked: false, state: 'readable', supportsBYOB: false }
+    at DefaultSerializer._writeHostObject (node:v8:319:15)
+    at Object.serialize (node:v8:368:7)
+    at globalThis.structuredClone (C:\welfare_corporation\scripts\node-polyfills.cjs:4:61)
+    at cloneBody (C:\welfare_corporation\node_modules\next\dist\compiled\undici\index.js:2:1890)
+    at cloneResponse (C:\welfare_corporation\node_modules\next\dist\compiled\undici\index.js:2:55920)
+    at cloneResponse (C:\welfare_corporation\node_modules\next\dist\compiled\undici\index.js:2:55815)
+    at Response.clone (C:\welfare_corporation\node_modules\next\dist\compiled\undici\index.js:2:55343)
+    at C:\welfare_corporation\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:11:404582
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+Error: Unserializable host object: ReadableStream { locked: false, state: 'readable', supportsBYOB: false }
+    at DefaultSerializer._writeHostObject (node:v8:319:15)
+    at Object.serialize (node:v8:368:7)
+    at globalThis.structuredClone (C:\welfare_corporation\scripts\node-polyfills.cjs:4:61)
+    at cloneBody (C:\welfare_corporation\node_modules\next\dist\compiled\undici\index.js:2:1890)
+    at cloneResponse (C:\welfare_corporation\node_modules\next\dist\compiled\undici\index.js:2:55920)
+    at cloneResponse (C:\welfare_corporation\node_modules\next\dist\compiled\undici\index.js:2:55815)
+    at Response.clone (C:\welfare_corporation\node_modules\next\dist\compiled\undici\index.js:2:55343)
+    at C:\welfare_corporation\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:11:404582
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+Error: Unserializable host object: ReadableStream { locked: false, state: 'readable', supportsBYOB: false }
+    at DefaultSerializer._writeHostObject (node:v8:319:15)
+    at Object.serialize (node:v8:368:7)
+    at globalThis.structuredClone (C:\welfare_corporation\scripts\node-polyfills.cjs:4:61)
+    at cloneBody (C:\welfare_corporation\node_modules\next\dist\compiled\undici\index.js:2:1890)
+    at cloneResponse (C:\welfare_corporation\node_modules\next\dist\compiled\undici\index.js:2:55920)
+    at cloneResponse (C:\welfare_corporation\node_modules\next\dist\compiled\undici\index.js:2:55815)
+    at Response.clone (C:\welfare_corporation\node_modules\next\dist\compiled\undici\index.js:2:55343)
+    at C:\welfare_corporation\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:11:404582
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+ ⨯ ./src/constants/index.ts
+Error: 
+  [31mx[0m Expected ',', got 'whatsapp'
+    ,-[[36;1;4mC:\welfare_corporation\src\constants\index.ts[0m:86:1]
+ [2m86[0m |   phone: "+91-9016326561",
+ [2m87[0m |   email: "info@welfarecorporation.com",
+ [2m88[0m |   address: "T-15 3rd floor SAI ASHISH TRADE CENTRE, opp. POONYABHINI, Althan, Surat, Gujarat 395007"
+ [2m89[0m |   whatsapp: "+919016326561",
+    : [31;1m  ^^^^^^^^[0m
+ [2m90[0m | };
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/constants/index.ts
+./src/app/page.tsx
+ ⨯ ./src/constants/index.ts
+Error: 
+  [31mx[0m Expected ',', got 'whatsapp'
+    ,-[[36;1;4mC:\welfare_corporation\src\constants\index.ts[0m:86:1]
+ [2m86[0m |   phone: "+91-9016326561",
+ [2m87[0m |   email: "shuklsatyam6906@gmail.com",
+ [2m88[0m |   address: "T-15 3rd floor SAI ASHISH TRADE CENTRE, opp. POONYABHINI, Althan, Surat, Gujarat 395007"
+ [2m89[0m |   whatsapp: "+919016326561",
+    : [31;1m  ^^^^^^^^[0m
+ [2m90[0m | };
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/constants/index.ts
+./src/app/page.tsx
+ ⨯ ./src/constants/index.ts
+Error: 
+  [31mx[0m Expected ',', got 'whatsapp'
+    ,-[[36;1;4mC:\welfare_corporation\src\constants\index.ts[0m:86:1]
+ [2m86[0m |   phone: "+91-9016326561",
+ [2m87[0m |   email: "shuklsatyam6906@gmail.com",
+ [2m88[0m |   address: "T-15 3rd floor SAI ASHISH TRADE CENTRE, opp. POONYABHINI, Althan, Surat, Gujarat 395007"
+ [2m89[0m |   whatsapp: "+919016326561",
+    : [31;1m  ^^^^^^^^[0m
+ [2m90[0m | };
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/constants/index.ts
+./src/app/page.tsx
+ ⨯ ./src/constants/index.ts
+Error: 
+  [31mx[0m Expected ',', got 'whatsapp'
+    ,-[[36;1;4mC:\welfare_corporation\src\constants\index.ts[0m:86:1]
+ [2m86[0m |   phone: "+91-9016326561",
+ [2m87[0m |   email: "shuklsatyam6906@gmail.com",
+ [2m88[0m |   address: "T-15 3rd floor SAI ASHISH TRADE CENTRE, opp. POONYABHINI, Althan, Surat, Gujarat 395007"
+ [2m89[0m |   whatsapp: "+919016326561",
+    : [31;1m  ^^^^^^^^[0m
+ [2m90[0m | };
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/constants/index.ts
+./src/app/page.tsx
+Error: Unserializable host object: ReadableStream { locked: false, state: 'readable', supportsBYOB: false }
+    at DefaultSerializer._writeHostObject (node:v8:319:15)
+    at Object.serialize (node:v8:368:7)
+    at globalThis.structuredClone (C:\welfare_corporation\scripts\node-polyfills.cjs:4:61)
+    at cloneBody (C:\welfare_corporation\node_modules\next\dist\compiled\undici\index.js:2:1890)
+    at cloneResponse (C:\welfare_corporation\node_modules\next\dist\compiled\undici\index.js:2:55920)
+    at cloneResponse (C:\welfare_corporation\node_modules\next\dist\compiled\undici\index.js:2:55815)
+    at Response.clone (C:\welfare_corporation\node_modules\next\dist\compiled\undici\index.js:2:55343)
+    at C:\welfare_corporation\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:11:404582
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)

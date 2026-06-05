@@ -21,39 +21,39 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="fixed left-0 right-0 top-0 z-50 px-3 py-3">
+    <nav className="fixed left-0 right-0 top-0 z-50 px-3 py-4">
       <div
         className={cn(
-          "container mx-auto flex items-center justify-between rounded-full border px-4 py-3 transition-all duration-500 md:px-6",
+          "container mx-auto flex items-center justify-between rounded-[1.65rem] border px-3.5 py-2.5 transition-all duration-500 md:px-5",
           scrolled
-            ? "border-white/25 bg-white/80 shadow-premium backdrop-blur-2xl"
-            : "border-white/10 bg-white/[0.06] backdrop-blur-xl"
+            ? "border-white/60 bg-white/78 shadow-[0_18px_55px_-38px_rgba(38,29,16,.5)] backdrop-blur-2xl"
+            : "border-white/45 bg-white/36 shadow-[0_18px_55px_-42px_rgba(38,29,16,.45)] backdrop-blur-2xl"
         )}
       >
-        <Link href="/" className="group flex items-center gap-3" onClick={() => setIsOpen(false)}>
+        <Link href="/" className="group flex items-center gap-3.5 rounded-full pr-2" onClick={() => setIsOpen(false)}>
           <span
             className={cn(
-              "grid h-11 w-11 place-items-center rounded-full border text-sm font-black transition-colors",
+              "grid h-10 w-10 place-items-center rounded-full border text-[13px] font-black transition-all duration-300 group-hover:scale-105",
               scrolled
-                ? "border-primary/10 bg-primary text-white"
-                : "border-white/20 bg-white/10 text-white"
+                ? "border-primary/10 bg-primary text-white shadow-premium"
+                : "border-primary/8 bg-primary text-white shadow-premium"
             )}
           >
             WC
           </span>
-          <span className="flex flex-col leading-none">
+          <span className="flex flex-col leading-tight">
             <span
               className={cn(
-                "text-sm font-black uppercase tracking-tight transition-colors md:text-base",
-                scrolled ? "text-primary" : "text-white"
+                "text-[15px] font-black tracking-[-0.01em] transition-colors md:text-base",
+                scrolled ? "text-primary" : "text-primary"
               )}
             >
               Welfare Corporation
             </span>
             <span
               className={cn(
-                "mt-1 text-[9px] font-bold uppercase tracking-[0.24em] transition-colors",
-                scrolled ? "text-accent" : "text-white/70"
+                "mt-0.5 text-[10px] font-semibold tracking-[0.14em] transition-colors",
+                scrolled ? "text-text-muted" : "text-text-muted"
               )}
             >
               Infratech Solution
@@ -61,18 +61,18 @@ const Navbar = () => {
           </span>
         </Link>
 
-        <div className="hidden items-center gap-1 rounded-full border border-white/10 bg-white/[0.08] p-1 backdrop-blur-xl lg:flex">
+        <div className="hidden items-center gap-0.5 rounded-full border border-primary/5 bg-white/45 p-1 backdrop-blur-xl lg:flex">
           {NAVIGATION_LINKS.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               className={cn(
-                "rounded-full px-4 py-2 text-sm font-semibold transition-all",
+                "rounded-full px-3.5 py-1.5 text-[13px] font-semibold transition-all duration-300",
                 pathname === link.href
-                  ? "bg-accent text-white shadow-lg shadow-accent/20"
+                  ? "bg-primary text-white shadow-[0_10px_28px_-18px_rgba(23,33,28,.8)]"
                   : scrolled
-                    ? "text-slate-600 hover:bg-primary/5 hover:text-primary"
-                    : "text-white/76 hover:bg-white/10 hover:text-white"
+                    ? "text-text-secondary hover:bg-white/70 hover:text-primary"
+                    : "text-text-secondary hover:bg-white/70 hover:text-primary"
               )}
             >
               {link.label}
@@ -85,7 +85,7 @@ const Navbar = () => {
             href="/contact"
             className={cn(
               "group inline-flex items-center gap-2 rounded-full px-5 py-3 text-sm font-bold transition-all duration-300 hover:-translate-y-0.5 active:scale-95",
-              scrolled ? "bg-primary text-white shadow-premium" : "bg-white text-primary shadow-glow"
+              scrolled ? "bg-primary text-white shadow-premium" : "bg-primary text-white shadow-premium"
             )}
           >
             <span>Get Quote</span>
@@ -98,7 +98,7 @@ const Navbar = () => {
             "grid h-11 w-11 place-items-center rounded-full border transition-colors lg:hidden",
             scrolled
               ? "border-primary/10 text-primary"
-              : "border-white/15 text-white"
+              : "border-primary/10 text-primary"
           )}
           aria-label="Toggle navigation"
           onClick={() => setIsOpen((value) => !value)}
@@ -114,7 +114,7 @@ const Navbar = () => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -18, scale: 0.98 }}
             transition={{ duration: 0.22 }}
-            className="absolute left-3 right-3 top-[5.75rem] flex flex-col gap-3 rounded-[2rem] border border-white/20 bg-white/90 p-4 shadow-premium backdrop-blur-2xl lg:hidden"
+            className="absolute left-3 right-3 top-[5.75rem] flex flex-col gap-3 rounded-[2rem] border border-white/60 bg-white/90 p-4 shadow-premium backdrop-blur-2xl lg:hidden"
           >
             {NAVIGATION_LINKS.map((link) => (
               <Link

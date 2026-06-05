@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import { Briefcase, Building, Calendar, ChevronRight, Headset, Plane } from "lucide-react";
 import { PageHero, PremiumCTA, SectionHeader } from "@/components/PremiumUI";
@@ -62,11 +60,11 @@ const Solutions = () => {
                 <span className="grid h-14 w-14 place-items-center rounded-full bg-primary text-accent">
                   <sol.icon size={26} />
                 </span>
-                <h3 className="mt-8 text-2xl font-black text-primary">{sol.title}</h3>
-                <p className="mt-4 leading-7 text-slate-600">{sol.description}</p>
+                <h3 className="mt-8 text-2xl font-black text-text-primary">{sol.title}</h3>
+                <p className="mt-4 leading-7 text-text-secondary">{sol.description}</p>
                 <ul className="mt-6 grid gap-2">
                   {sol.features.map((feature) => (
-                    <li key={feature} className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.16em] text-slate-500">
+                    <li key={feature} className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.16em] text-text-muted">
                       <ChevronRight size={14} className="text-accent" />
                       <span>{feature}</span>
                     </li>
@@ -93,7 +91,7 @@ const Solutions = () => {
             ].map((item) => (
               <div key={item.t} className="rounded-[2rem] border border-white/12 bg-white/[0.07] p-6 shadow-premium backdrop-blur-2xl">
                 <h4 className="text-xl font-black">{item.t}</h4>
-                <p className="mt-3 text-sm leading-7 text-white/62">{item.d}</p>
+                <p className="mt-3 text-sm leading-7 text-text-inverse-soft">{item.d}</p>
               </div>
             ))}
           </div>
@@ -104,7 +102,7 @@ const Solutions = () => {
         <div className="container mx-auto px-6">
           <div className="rounded-[2rem] border border-slate-200 bg-white/80 p-8 text-center shadow-premium backdrop-blur-2xl">
             <p className="eyebrow">A Partner and Solution for</p>
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-5 text-2xl font-black text-slate-400 grayscale md:gap-12 md:text-3xl">
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-5 text-2xl font-black text-text-muted grayscale md:gap-12 md:text-3xl">
               <span>LARSEN & TOUBRO</span>
               <span>RELIANCE</span>
               <span>TATA MOTORS</span>

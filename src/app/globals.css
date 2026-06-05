@@ -3,15 +3,14 @@
 @tailwind utilities;
 
 :root {
-  --background: #f8fafc;
-  --foreground: #07111f;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #020617;
-    --foreground: #f8fafc;
-  }
+  --background: #fbf7ef;
+  --foreground: #0f172a;
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+  --text-inverse: #ffffff;
+  --text-inverse-soft: #e2e8f0;
+  --text-inverse-muted: #cbd5e1;
 }
 
 * {
@@ -25,9 +24,55 @@ body {
   text-rendering: geometricPrecision;
 }
 
+@layer base {
+  body {
+    @apply bg-porcelain text-text-primary antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: var(--text-primary);
+  }
+
+  p,
+  li,
+  label,
+  input,
+  textarea,
+  select {
+    color: var(--text-secondary);
+  }
+
+  input,
+  textarea,
+  select {
+    caret-color: var(--text-primary);
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: var(--text-muted);
+    opacity: 1;
+  }
+
+  .bg-primary :where(h1, h2, h3, h4, h5, h6),
+  .bg-ink :where(h1, h2, h3, h4, h5, h6) {
+    color: var(--text-inverse);
+  }
+
+  .bg-primary :where(p, li),
+  .bg-ink :where(p, li) {
+    color: var(--text-inverse-soft);
+  }
+}
+
 @layer components {
   .glass-morphism {
-    @apply border border-white/20 bg-white/70 shadow-premium backdrop-blur-2xl;
+    @apply border border-white/60 bg-white/68 shadow-premium backdrop-blur-2xl;
   }
 
   .dark .glass-morphism {
@@ -35,15 +80,15 @@ body {
   }
 
   .premium-glass {
-    @apply border border-white/15 bg-white/[0.08] shadow-premium backdrop-blur-2xl;
+    @apply border border-white/50 bg-white/50 shadow-premium backdrop-blur-2xl;
   }
 
   .light-glass {
-    @apply border border-slate-200/70 bg-white/75 shadow-premium backdrop-blur-2xl;
+    @apply border border-white/70 bg-white/72 shadow-premium backdrop-blur-2xl;
   }
 
   .gradient-text {
-    @apply bg-gradient-to-br from-white via-slate-100 to-emerald-200 bg-clip-text text-transparent;
+    @apply text-text-primary;
   }
 
   .dark .gradient-text {
@@ -59,12 +104,22 @@ body {
   }
 
   .premium-button {
-    @apply inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-bold text-primary shadow-premium transition-all duration-300 hover:-translate-y-0.5 hover:shadow-premium-hover active:scale-95;
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-bold text-white shadow-premium transition-all duration-300 hover:-translate-y-0.5 hover:bg-secondary hover:shadow-premium-hover active:scale-95;
   }
 
   .premium-button-dark {
-    @apply inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-bold text-white shadow-premium transition-all duration-300 hover:-translate-y-0.5 hover:bg-slate-900 active:scale-95;
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-bold text-white shadow-premium transition-all duration-300 hover:-translate-y-0.5 hover:bg-secondary active:scale-95;
   }
+}
+
+.curved-top {
+  border-top-left-radius: min(12vw, 7rem);
+  border-top-right-radius: min(12vw, 7rem);
+}
+
+.curved-bottom {
+  border-bottom-left-radius: min(12vw, 7rem);
+  border-bottom-right-radius: min(12vw, 7rem);
 }
 
 @keyframes slow-zoom {

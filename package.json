@@ -3,16 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "node --require ./scripts/node-polyfills.cjs ./node_modules/next/dist/bin/next dev",
+    "build": "node --require ./scripts/node-polyfills.cjs ./node_modules/next/dist/bin/next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "node --require ./scripts/node-polyfills.cjs ./node_modules/eslint/bin/eslint.js"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
     "autoprefixer": "^10.5.0",
     "clsx": "^2.1.1",
     "framer-motion": "^12.40.0",
+    "gsap": "^3.15.0",
     "lucide-react": "^1.17.0",
     "next": "13.5",
     "postcss": "^8.5.15",

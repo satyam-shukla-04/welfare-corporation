@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import InquiryForm from "@/components/InquiryForm";
 import { CONTACT_DETAILS } from "@/constants";
@@ -27,10 +25,10 @@ const Contact = () => {
         <div className="container mx-auto grid gap-10 px-6 lg:grid-cols-[.9fr_1.1fr]">
           <div>
             <span className="eyebrow">Corporate Details</span>
-            <h2 className="mt-5 text-4xl font-black tracking-tight text-primary md:text-6xl">
+            <h2 className="mt-5 text-4xl font-black tracking-tight text-text-primary md:text-6xl">
               Corporate Details
             </h2>
-            <p className="mt-6 text-lg leading-8 text-slate-600">
+            <p className="mt-6 text-lg leading-8 text-text-secondary">
               Whether you're looking for a one-time booking or a long-term corporate partnership, we're here to assist you. Reach out to us through any of the following channels.
             </p>
 
@@ -41,8 +39,8 @@ const Contact = () => {
                     <item.icon size={22} />
                   </span>
                   <div>
-                    <h4 className="font-black text-primary">{item.title}</h4>
-                    <p className="mt-1 leading-7 text-slate-600">{item.value}</p>
+                    <h4 className="font-black text-text-primary">{item.title}</h4>
+                    <p className="mt-1 leading-7 text-text-secondary">{item.value}</p>
                   </div>
                 </div>
               ))}
@@ -75,7 +73,7 @@ const Contact = () => {
         <div className="flex h-full items-center justify-center rounded-[2rem] border border-white/10 bg-white/[0.06] text-center text-white shadow-glow backdrop-blur-2xl">
           <div>
             <MapPin size={48} className="mx-auto mb-4 text-accent" />
-            <p className="text-sm font-bold uppercase tracking-[0.24em] text-white/45">Interactive Map Service Integration Area</p>
+            <p className="text-sm font-bold uppercase tracking-[0.24em] text-text-inverse-muted">Interactive Map Service Integration Area</p>
           </div>
         </div>
       </section>
