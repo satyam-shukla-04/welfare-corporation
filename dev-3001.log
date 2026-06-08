@@ -4,7 +4,20 @@
 
   ▲ Next.js 13.5.11
   - Local:        http://localhost:3001
+  - Environments: .env.local
 
- ✓ Ready in 367.5s
- ✓ Compiled /page in 2.5s (1470 modules)
- ✓ Compiled in 466ms (724 modules)
+ ✓ Ready in 3.9s
+ ○ Compiling /contact/page ...
+ ✓ Compiled /contact/page in 5.1s (1456 modules)
+ ✓ Compiled in 568ms (707 modules)
+ ✓ Compiled /_error in 1910ms (1598 modules)
+ ✓ Compiled /favicon.ico/route in 1198ms (814 modules)
+   Reload env: .env.local
+ ✓ Compiled in 973ms (1596 modules)
+   Reload env: .env.local
+ ✓ Compiled in 221ms (1596 modules)
+   Reload env: .env.local
+ ✓ Compiled in 239ms (1596 modules)
+ ✓ Compiled in 161ms (1596 modules)
+ ✓ Compiled /_error in 659ms (1598 modules)
+ ✓ Compiled /favicon.ico/route in 203ms (814 modules)

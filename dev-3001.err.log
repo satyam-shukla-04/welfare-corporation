@@ -1,0 +1,30 @@
+Error: Unserializable host object: ReadableStream { locked: false, state: 'readable', supportsBYOB: false }
+    at DefaultSerializer._writeHostObject (node:v8:319:15)
+    at Object.serialize (node:v8:368:7)
+    at globalThis.structuredClone (C:\welfare_corporation\scripts\node-polyfills.cjs:4:61)
+    at cloneBody (C:\welfare_corporation\node_modules\next\dist\compiled\undici\index.js:2:1890)
+    at cloneResponse (C:\welfare_corporation\node_modules\next\dist\compiled\undici\index.js:2:55920)
+    at cloneResponse (C:\welfare_corporation\node_modules\next\dist\compiled\undici\index.js:2:55815)
+    at Response.clone (C:\welfare_corporation\node_modules\next\dist\compiled\undici\index.js:2:55343)
+    at C:\welfare_corporation\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:11:404582
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+Error: Unserializable host object: ReadableStream { locked: false, state: 'readable', supportsBYOB: false }
+    at DefaultSerializer._writeHostObject (node:v8:319:15)
+    at Object.serialize (node:v8:368:7)
+    at globalThis.structuredClone (C:\welfare_corporation\scripts\node-polyfills.cjs:4:61)
+    at cloneBody (C:\welfare_corporation\node_modules\next\dist\compiled\undici\index.js:2:1890)
+    at cloneResponse (C:\welfare_corporation\node_modules\next\dist\compiled\undici\index.js:2:55920)
+    at cloneResponse (C:\welfare_corporation\node_modules\next\dist\compiled\undici\index.js:2:55815)
+    at Response.clone (C:\welfare_corporation\node_modules\next\dist\compiled\undici\index.js:2:55343)
+    at C:\welfare_corporation\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:11:404582
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+Error: Unserializable host object: ReadableStream { locked: false, state: 'readable', supportsBYOB: false }
+    at DefaultSerializer._writeHostObject (node:v8:319:15)
+    at Object.serialize (node:v8:368:7)
+    at globalThis.structuredClone (C:\welfare_corporation\scripts\node-polyfills.cjs:4:61)
+    at cloneBody (C:\welfare_corporation\node_modules\next\dist\compiled\undici\index.js:2:1890)
+    at cloneResponse (C:\welfare_corporation\node_modules\next\dist\compiled\undici\index.js:2:55920)
+    at cloneResponse (C:\welfare_corporation\node_modules\next\dist\compiled\undici\index.js:2:55815)
+    at Response.clone (C:\welfare_corporation\node_modules\next\dist\compiled\undici\index.js:2:55343)
+    at C:\welfare_corporation\node_modules\next\dist\compiled\next-server\app-page.runtime.dev.js:11:404582
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
