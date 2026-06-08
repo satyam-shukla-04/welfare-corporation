@@ -5,17 +5,6 @@
   ▲ Next.js 13.5.11
   - Local:        http://localhost:3001
 
- ✓ Ready in 3.5s
- ○ Compiling /page ...
- ✓ Compiled /page in 8.1s (1470 modules)
- ✓ Compiled in 757ms (724 modules)
- ✓ Compiled /services/page in 1514ms (1480 modules)
- ✓ Compiled /_error in 2.4s (1636 modules)
- ✓ Compiled /about/page in 788ms (1643 modules)
- ✓ Compiled /solutions/page in 505ms (1651 modules)
- ✓ Compiled /contact/page in 1167ms (1656 modules)
- ✓ Compiled /_error in 502ms (1658 modules)
- ✓ Compiled /fleet/page in 758ms (1666 modules)
- ✓ Compiled in 715ms (1651 modules)
- ✓ Compiled /page in 648ms (831 modules)
- ✓ Compiled /_error in 998ms (1663 modules)
+ ✓ Ready in 367.5s
+ ✓ Compiled /page in 2.5s (1470 modules)
+ ✓ Compiled in 466ms (724 modules)

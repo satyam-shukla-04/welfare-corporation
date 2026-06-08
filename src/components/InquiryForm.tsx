@@ -6,10 +6,10 @@ import { motion } from "framer-motion";
 import { AlertCircle, CheckCircle, Loader2, Send } from "lucide-react";
 
 const fieldClass =
-  "peer w-full rounded-2xl border border-primary/10 bg-white/90 px-4 pb-3 pt-6 text-text-primary outline-none backdrop-blur-xl transition-all placeholder:text-text-muted focus:border-accent/45 focus:bg-white focus:ring-4 focus:ring-accent/10";
+  "peer w-full rounded-2xl border border-primary/10 bg-white/[0.88] px-5 pb-3.5 pt-7 text-[0.95rem] font-medium text-text-primary outline-none backdrop-blur-xl transition-all duration-300 placeholder:text-transparent hover:border-primary/20 hover:bg-white focus:border-accent/50 focus:bg-white focus:shadow-[0_18px_45px_rgba(15,23,42,0.08)] focus:ring-4 focus:ring-accent/10";
 
 const labelClass =
-  "pointer-events-none absolute left-4 top-2 text-xs font-semibold text-text-muted transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:text-xs peer-focus:text-accent peer-valid:top-2 peer-valid:text-xs";
+  "pointer-events-none absolute left-5 top-2.5 origin-left text-[0.72rem] font-bold uppercase tracking-[0.18em] text-accent transition-all duration-300 ease-out peer-placeholder-shown:top-5 peer-placeholder-shown:text-[0.95rem] peer-placeholder-shown:font-semibold peer-placeholder-shown:normal-case peer-placeholder-shown:tracking-normal peer-placeholder-shown:text-text-muted peer-focus:top-2.5 peer-focus:text-[0.72rem] peer-focus:font-bold peer-focus:uppercase peer-focus:tracking-[0.18em] peer-focus:text-accent";
 
 const InquiryForm = () => {
   const formRef = useRef<HTMLFormElement>(null);
@@ -76,7 +76,7 @@ const InquiryForm = () => {
               id="name"
               name="user_name"
               required
-              placeholder="Full Name"
+              placeholder=" "
               className={fieldClass}
             />
             <label htmlFor="name" className={labelClass}>
@@ -90,7 +90,7 @@ const InquiryForm = () => {
               id="phone"
               name="user_phone"
               required
-              placeholder="Phone Number"
+              placeholder=" "
               className={fieldClass}
             />
             <label htmlFor="phone" className={labelClass}>
@@ -104,7 +104,7 @@ const InquiryForm = () => {
               name="message"
               required
               rows={5}
-              placeholder="Message"
+              placeholder=" "
               className={fieldClass}
             />
             <label htmlFor="message" className={labelClass}>

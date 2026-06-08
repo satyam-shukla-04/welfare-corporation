@@ -22,7 +22,7 @@ export const ServiceCard = ({ title, description, image, features, id, className
       whileHover={{ y: -8, scale: 1.01 }}
       transition={{ type: "spring", stiffness: 240, damping: 24 }}
       className={cn(
-        "group relative min-h-[430px] overflow-hidden rounded-[3rem] border border-white/70 bg-white text-text-primary shadow-premium",
+        "group relative min-h-[360px] overflow-hidden rounded-[2rem] border border-white/70 bg-white text-text-primary shadow-premium md:min-h-[430px] md:rounded-[3rem]",
         className
       )}
     >
@@ -33,9 +33,9 @@ export const ServiceCard = ({ title, description, image, features, id, className
         className="object-cover opacity-75 transition duration-700 group-hover:scale-105 group-hover:opacity-90"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-white via-white/70 to-white/5" />
-      <div className="relative z-10 flex h-full min-h-[430px] flex-col justify-between p-7 md:p-8">
+      <div className="relative z-10 flex h-full min-h-[360px] flex-col justify-between p-5 md:min-h-[430px] md:p-8">
         <div className="flex items-center justify-between">
-          <span className="rounded-full border border-primary/10 bg-white/75 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.22em] text-text-secondary backdrop-blur-xl">
+          <span className="rounded-full border border-primary/10 bg-white/75 px-3 py-2 text-[9px] font-bold uppercase tracking-[0.16em] text-text-secondary backdrop-blur-xl md:px-4 md:text-[10px] md:tracking-[0.22em]">
             Corporate Service
           </span>
           <span className="grid h-11 w-11 place-items-center rounded-full border border-primary/8 bg-white/70 text-accent backdrop-blur-xl">
@@ -44,13 +44,13 @@ export const ServiceCard = ({ title, description, image, features, id, className
         </div>
 
         <div>
-          <h3 className="text-3xl font-black tracking-tight">{title}</h3>
-          <p className="mt-4 max-w-xl text-sm leading-7 text-text-secondary md:text-base">{description}</p>
-          <div className="mt-6 flex flex-wrap gap-2">
+          <h3 className="text-2xl font-black md:text-3xl">{title}</h3>
+          <p className="mt-3 max-w-xl text-sm leading-7 text-text-secondary md:mt-4 md:text-base">{description}</p>
+          <div className="mt-5 flex flex-wrap gap-2 md:mt-6">
             {features.map((feature) => (
               <span
                 key={feature}
-                className="inline-flex items-center gap-2 rounded-full border border-primary/8 bg-white/75 px-3 py-2 text-xs font-semibold text-text-secondary backdrop-blur-xl"
+              className="inline-flex items-center gap-2 rounded-full border border-primary/8 bg-white/75 px-3 py-2 text-[11px] font-semibold text-text-secondary backdrop-blur-xl md:text-xs"
               >
                 <Check size={14} className="text-accent" />
                 {feature}
@@ -83,7 +83,7 @@ export const FleetCard = ({ name, capacity, bestFor, image, category }: FleetCar
     <motion.article
       whileHover={{ y: -8 }}
       transition={{ type: "spring", stiffness: 240, damping: 24 }}
-      className="group overflow-hidden rounded-[3rem] border border-white/70 bg-white/80 shadow-premium backdrop-blur-2xl"
+      className="group overflow-hidden rounded-[2rem] border border-white/70 bg-white/80 shadow-premium backdrop-blur-2xl md:rounded-[3rem]"
     >
       <div className="relative aspect-[4/3] overflow-hidden">
         <Image
@@ -97,8 +97,8 @@ export const FleetCard = ({ name, capacity, bestFor, image, category }: FleetCar
           {category}
         </div>
       </div>
-      <div className="p-6">
-        <h4 className="text-2xl font-black tracking-tight text-primary transition-colors group-hover:text-accent">
+      <div className="p-5 md:p-6">
+        <h4 className="text-xl font-black text-primary transition-colors group-hover:text-accent md:text-2xl">
           {name}
         </h4>
         <div className="mt-4 grid gap-3 text-sm text-text-secondary">

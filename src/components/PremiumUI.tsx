@@ -44,13 +44,13 @@ export function SectionHeader({
   align?: "left" | "center";
 }) {
   return (
-    <div className={cn("mb-12 max-w-3xl", align === "center" && "mx-auto text-center")}>
-      <span className="eyebrow mb-4 block">{eyebrow}</span>
-      <h2 className="text-4xl font-black tracking-tight text-[#0F172A] opacity-100 md:text-5xl lg:text-6xl">
+    <div className={cn("mb-8 max-w-3xl md:mb-12", align === "center" && "mx-auto text-center")}>
+      <span className="eyebrow mb-3 block md:mb-4">{eyebrow}</span>
+      <h2 className="text-3xl font-black text-[#0F172A] opacity-100 md:text-5xl lg:text-6xl">
         {title}
       </h2>
       {description && (
-        <p className="mt-5 text-base leading-8 text-text-secondary md:text-lg">{description}</p>
+        <p className="mt-4 text-base leading-7 text-text-secondary md:mt-5 md:text-lg md:leading-8">{description}</p>
       )}
     </div>
   );

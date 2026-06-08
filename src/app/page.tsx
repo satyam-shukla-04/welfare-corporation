@@ -8,6 +8,7 @@ import {
   ArrowRight,
   Briefcase,
   Clock,
+  type LucideIcon,
   MessageSquare,
   Phone,
   Shield,
@@ -20,7 +21,14 @@ import { CONTACT_DETAILS, FLEET, SERVICES } from "@/constants";
 import { BackgroundAura, SectionHeader, reveal, stagger } from "@/components/PremiumUI";
 import { cn } from "@/lib/utils";
 
-const StatCounter = ({ end, suffix, label, icon: Icon }: any) => {
+interface StatCounterProps {
+  end: number;
+  suffix: string;
+  label: string;
+  icon: LucideIcon;
+}
+
+const StatCounter = ({ end, suffix, label, icon: Icon }: StatCounterProps) => {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
@@ -68,18 +76,18 @@ export default function Home() {
     <div className="flex flex-col bg-porcelain">
       <Hero />
 
-      <section className="relative overflow-hidden bg-white py-10 text-text-primary curved-bottom">
+      <section className="relative overflow-hidden bg-white py-8 text-text-primary curved-bottom md:py-10">
         <BackgroundAura light />
-        <div className="container relative z-10 mx-auto px-6">
-          <div className="rounded-[3rem] border border-primary/5 bg-porcelain/70 p-6 shadow-premium backdrop-blur-2xl">
-            <p className="text-center text-xs font-bold uppercase tracking-[0.3em] text-text-muted">
+        <div className="container relative z-10 mx-auto px-5 sm:px-6">
+          <div className="rounded-[2rem] border border-primary/5 bg-porcelain/70 p-4 shadow-premium backdrop-blur-2xl md:rounded-[3rem] md:p-6">
+            <p className="text-center text-[10px] font-bold uppercase tracking-[0.22em] text-text-muted md:text-xs md:tracking-[0.3em]">
               Trusted by 150+ Leading Businesses
             </p>
-            <div className="mt-6 grid grid-cols-2 gap-4 text-center sm:grid-cols-5">
+            <div className="mt-4 grid grid-cols-2 gap-3 text-center sm:grid-cols-5 md:mt-6 md:gap-4">
               {["L&T", "Reliance", "Tata", "Adani", "HDFC"].map((client) => (
                 <span
                   key={client}
-                  className="rounded-2xl border border-primary/5 bg-white/80 px-5 py-4 text-xl font-black text-text-secondary grayscale transition-all hover:-translate-y-1 hover:text-primary"
+                  className="rounded-2xl border border-primary/5 bg-white/80 px-3 py-3 text-base font-black text-text-secondary grayscale transition-all hover:-translate-y-1 hover:text-primary md:px-5 md:py-4 md:text-xl"
                 >
                   {client}
                 </span>
@@ -90,7 +98,7 @@ export default function Home() {
       </section>
 
       <section className="section-padding bg-porcelain">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-5 sm:px-6">
           <div className="grid gap-8 lg:grid-cols-[1fr_.8fr]">
             <motion.div
               variants={reveal}
@@ -98,7 +106,7 @@ export default function Home() {
               whileInView="visible"
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
-              className="relative min-h-[520px] overflow-hidden rounded-[4rem] bg-primary p-8 text-white shadow-premium"
+              className="relative min-h-[420px] overflow-hidden rounded-[2.5rem] bg-primary p-6 text-white shadow-premium md:min-h-[520px] md:rounded-[4rem] md:p-8"
             >
               <Image
                 src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1800&auto=format&fit=crop"
@@ -110,11 +118,11 @@ export default function Home() {
               <div className="relative z-10 flex h-full flex-col justify-between">
                 <div>
                   <span className="eyebrow">About the Company</span>
-                  <h2 className="mt-5 max-w-2xl text-4xl font-black tracking-tight md:text-6xl">
+                  <h2 className="mt-4 max-w-2xl text-3xl font-black md:mt-5 md:text-6xl">
                     Corporate Transportation Expertise You Can Trust
                   </h2>
                 </div>
-                <p className="mt-16 max-w-2xl text-lg leading-8 text-text-inverse-soft">
+                <p className="mt-10 max-w-2xl text-base leading-7 text-text-inverse-soft md:mt-16 md:text-lg md:leading-8">
                   Welfare Corporation (Infratech Solution) is a premium mobility partner dedicated to providing seamless, safe, and professional transportation solutions for the modern corporate world.
                 </p>
               </div>
@@ -131,11 +139,11 @@ export default function Home() {
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true }}
-                className="rounded-[3rem] border border-white/70 bg-white/80 p-8 shadow-premium backdrop-blur-2xl"
+                className="rounded-[2rem] border border-white/70 bg-white/80 p-6 shadow-premium backdrop-blur-2xl md:rounded-[3rem] md:p-8"
                 >
-                  <item.icon className="mb-8 text-accent" size={32} />
-                  <div className="text-5xl font-black text-text-primary">{item.value}</div>
-                  <p className="mt-3 text-sm font-bold uppercase tracking-[0.2em] text-text-muted">{item.label}</p>
+                  <item.icon className="mb-6 text-accent md:mb-8" size={32} />
+                  <div className="text-4xl font-black text-text-primary md:text-5xl">{item.value}</div>
+                  <p className="mt-3 text-xs font-bold uppercase tracking-[0.16em] text-text-muted md:text-sm md:tracking-[0.2em]">{item.label}</p>
                 </motion.div>
               ))}
               <Link href="/about" className="premium-button-dark">
@@ -148,7 +156,7 @@ export default function Home() {
       </section>
 
       <section className="section-padding bg-white curved-top curved-bottom">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-5 sm:px-6">
           <SectionHeader
             eyebrow="Our Expertise"
             title="Corporate Mobility Solutions"
@@ -174,13 +182,13 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-linen py-24 text-text-primary curved-top curved-bottom">
+      <section className="relative overflow-hidden bg-linen py-14 text-text-primary curved-top curved-bottom md:py-20 lg:py-24">
         <BackgroundAura light />
-        <div className="container relative z-10 mx-auto px-6">
-          <div className="grid gap-12 lg:grid-cols-[.9fr_1.1fr] lg:items-center">
+        <div className="container relative z-10 mx-auto px-5 sm:px-6">
+          <div className="grid gap-8 lg:grid-cols-[.9fr_1.1fr] lg:items-center lg:gap-12">
             <div>
               <span className="eyebrow">Why Choose Us</span>
-              <h2 className="mt-5 text-4xl font-black tracking-tight md:text-6xl">
+              <h2 className="mt-4 text-3xl font-black md:mt-5 md:text-6xl">
                 The Preferred Partner for 150+ Corporations
               </h2>
             </div>
@@ -189,9 +197,9 @@ export default function Home() {
                 <motion.div
                   key={item.title}
                   whileHover={{ y: -6 }}
-                className="rounded-[3rem] border border-white/70 bg-white/72 p-6 shadow-premium backdrop-blur-2xl"
+                className="rounded-[2rem] border border-white/70 bg-white/72 p-5 shadow-premium backdrop-blur-2xl md:rounded-[3rem] md:p-6"
               >
-                <item.icon className="mb-8 text-accent" size={30} />
+                <item.icon className="mb-5 text-accent md:mb-8" size={30} />
                 <h3 className="text-xl font-black">{item.title}</h3>
                   <p className="mt-3 text-sm leading-7 text-text-secondary">{item.desc}</p>
                 </motion.div>
@@ -202,14 +210,14 @@ export default function Home() {
       </section>
 
       <section className="section-padding bg-porcelain">
-        <div className="container mx-auto px-6">
-          <div className="mb-12 flex flex-col justify-between gap-6 md:flex-row md:items-end">
+        <div className="container mx-auto px-5 sm:px-6">
+          <div className="mb-8 flex flex-col justify-between gap-4 md:mb-12 md:flex-row md:items-end md:gap-6">
             <SectionHeader
               eyebrow="The Fleet"
               title="Premium Vehicles for Every Need"
               align="left"
             />
-            <Link href="/fleet" className="premium-button-dark mb-12">
+            <Link href="/fleet" className="premium-button-dark md:mb-12">
               <span>View Full Fleet</span>
               <ArrowRight size={18} />
             </Link>
@@ -222,9 +230,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-primary py-24 curved-top curved-bottom">
+      <section className="relative overflow-hidden bg-primary py-14 curved-top curved-bottom md:py-20 lg:py-24">
         <BackgroundAura />
-        <div className="container relative z-10 mx-auto px-6">
+        <div className="container relative z-10 mx-auto px-5 sm:px-6">
           <div className="grid grid-cols-1 gap-5 md:grid-cols-4">
             <StatCounter end={150} suffix="+" label="Corporate Clients" icon={Users} />
             <StatCounter end={5000} suffix="+" label="Trips Completed" icon={Briefcase} />
@@ -235,17 +243,17 @@ export default function Home() {
       </section>
 
       <section id="inquiry" className="section-padding relative overflow-hidden bg-porcelain">
-        <div className="container relative z-10 mx-auto px-6">
-          <div className="grid gap-10 lg:grid-cols-[.9fr_1.1fr] lg:items-center">
+        <div className="container relative z-10 mx-auto px-5 sm:px-6">
+          <div className="grid gap-8 lg:grid-cols-[.9fr_1.1fr] lg:items-center lg:gap-10">
             <div>
               <span className="eyebrow">Get in Touch</span>
-              <h2 className="mt-5 text-4xl font-black tracking-tight text-text-primary md:text-6xl">
+              <h2 className="mt-4 text-3xl font-black text-text-primary md:mt-5 md:text-6xl">
                 Ready to Upgrade Your Corporate Travel?
               </h2>
-              <p className="mt-6 max-w-xl text-lg leading-8 text-text-secondary">
+              <p className="mt-4 max-w-xl text-base leading-7 text-text-secondary md:mt-6 md:text-lg md:leading-8">
                 Leave your details and our mobility experts will contact you with a customized solution for your business.
               </p>
-              <div className="mt-10 grid gap-4">
+              <div className="mt-7 grid gap-3 md:mt-10 md:gap-4">
                 {[
                   { href: `tel:${CONTACT_DETAILS.phone}`, label: "Call Us Directly", value: CONTACT_DETAILS.phone, icon: Phone },
                   { href: `https://wa.me/${CONTACT_DETAILS.whatsapp}`, label: "WhatsApp Inquiry", value: "Start a Chat", icon: MessageSquare },
@@ -253,16 +261,16 @@ export default function Home() {
                   <a
                     key={item.label}
                     href={item.href}
-                    className="group flex items-center gap-4 rounded-[2rem] border border-slate-200 bg-white/80 p-5 shadow-premium backdrop-blur-2xl transition-all hover:-translate-y-1"
+                    className="group flex items-center gap-3 rounded-[1.5rem] border border-slate-200 bg-white/80 p-4 shadow-premium backdrop-blur-2xl transition-all hover:-translate-y-1 md:gap-4 md:rounded-[2rem] md:p-5"
                   >
-                    <span className="grid h-12 w-12 place-items-center rounded-full bg-primary text-white group-hover:bg-accent">
+                    <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-primary text-white group-hover:bg-accent md:h-12 md:w-12">
                       <item.icon size={20} />
                     </span>
                     <span>
                       <span className="block text-[10px] font-bold uppercase tracking-[0.24em] text-text-muted">
                         {item.label}
                       </span>
-                      <span className="mt-1 block text-lg font-black text-text-primary">{item.value}</span>
+                      <span className="mt-1 block break-words text-base font-black text-text-primary md:text-lg">{item.value}</span>
                     </span>
                   </a>
                 ))}
