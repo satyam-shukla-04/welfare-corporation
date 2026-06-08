@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import emailjs from "@emailjs/browser";
 import { motion } from "framer-motion";
 import { AlertCircle, CheckCircle, Loader2, Send } from "lucide-react";
@@ -11,12 +11,96 @@ const fieldClass =
 const labelClass =
   "pointer-events-none absolute left-5 top-2.5 origin-left text-[0.72rem] font-bold uppercase tracking-[0.18em] text-accent transition-all duration-300 ease-out peer-placeholder-shown:top-5 peer-placeholder-shown:text-[0.95rem] peer-placeholder-shown:font-semibold peer-placeholder-shown:normal-case peer-placeholder-shown:tracking-normal peer-placeholder-shown:text-text-muted peer-focus:top-2.5 peer-focus:text-[0.72rem] peer-focus:font-bold peer-focus:uppercase peer-focus:tracking-[0.18em] peer-focus:text-accent";
 
+const fieldErrorClass = "flex items-center gap-2 px-1 text-xs font-semibold text-red-600";
+const INQUIRY_SUBJECT = "New Corporate Inquiry Received";
+const MIN_MESSAGE_LENGTH = 10;
+
+type SubmitStatus = "idle" | "loading" | "success" | "error";
+
+interface FormValues {
+  name: string;
+  phone: string;
+  message: string;
+}
+
+type FormErrors = Partial<Record<keyof FormValues, string>>;
+
+const initialValues: FormValues = {
+  name: "",
+  phone: "",
+  message: "",
+};
+
+const isValidIndianPhoneNumber = (phone: string) => {
+  const normalizedPhone = phone.replace(/[\s()-]/g, "");
+  return /^(?:\+91|91)?[6-9]\d{9}$/.test(normalizedPhone);
+};
+
+const validateForm = (values: FormValues): FormErrors => {
+  const errors: FormErrors = {};
+  const name = values.name.trim();
+  const phone = values.phone.trim();
+  const message = values.message.trim();
+
+  if (!name) {
+    errors.name = "Please enter your full name.";
+  } else if (name.length < 2) {
+    errors.name = "Name must be at least 2 characters.";
+  }
+
+  if (!phone) {
+    errors.phone = "Please enter your phone number.";
+  } else if (!isValidIndianPhoneNumber(phone)) {
+    errors.phone = "Enter a valid Indian phone number.";
+  }
+
+  if (!message) {
+    errors.message = "Please enter your message.";
+  } else if (message.length < MIN_MESSAGE_LENGTH) {
+    errors.message = `Message must be at least ${MIN_MESSAGE_LENGTH} characters.`;
+  }
+
+  return errors;
+};
+
 const InquiryForm = () => {
-  const formRef = useRef<HTMLFormElement>(null);
-  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [formValues, setFormValues] = useState<FormValues>(initialValues);
+  const [errors, setErrors] = useState<FormErrors>({});
+  const [status, setStatus] = useState<SubmitStatus>("idle");
+
+  const handleFieldChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const fieldName = event.target.name as keyof FormValues;
+    const nextValue = event.target.value;
+
+    setFormValues((currentValues) => ({
+      ...currentValues,
+      [fieldName]: nextValue,
+    }));
+
+    if (errors[fieldName]) {
+      setErrors((currentErrors) => ({
+        ...currentErrors,
+        [fieldName]: undefined,
+      }));
+    }
+
+    if (status === "error") {
+      setStatus("idle");
+    }
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (status === "loading") return;
+
+    const nextErrors = validateForm(formValues);
+    setErrors(nextErrors);
+
+    if (Object.keys(nextErrors).length > 0) {
+      setStatus("idle");
+      return;
+    }
+
     setStatus("loading");
 
     try {
@@ -24,15 +108,26 @@ const InquiryForm = () => {
       const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
       const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
 
-      if (serviceId && templateId && publicKey && formRef.current) {
-        await emailjs.sendForm(serviceId, templateId, formRef.current, { publicKey });
-      } else {
-        console.warn("EmailJS environment variables are not configured. Inquiry form is using demo mode.");
-        await new Promise((resolve) => setTimeout(resolve, 1200));
+      if (!serviceId || !templateId || !publicKey) {
+        throw new Error("EmailJS environment variables are not configured.");
       }
 
+      await emailjs.send(
+        serviceId,
+        templateId,
+        {
+          subject: INQUIRY_SUBJECT,
+          name: formValues.name.trim(),
+          phone: formValues.phone.trim(),
+          message: formValues.message.trim(),
+          body: `You have received a new inquiry.\n\nName: ${formValues.name.trim()}\n\nPhone Number: ${formValues.phone.trim()}\n\nMessage:\n${formValues.message.trim()}`,
+        },
+        { publicKey }
+      );
+
+      setFormValues(initialValues);
+      setErrors({});
       setStatus("success");
-      formRef.current?.reset();
     } catch (error) {
       console.error("Inquiry Error:", error);
       setStatus("error");
@@ -53,7 +148,7 @@ const InquiryForm = () => {
           <CheckCircle className="mx-auto mb-5 h-16 w-16 text-accent" />
           <h3 className="text-3xl font-black text-text-primary">Inquiry Sent</h3>
           <p className="mx-auto mt-3 max-w-sm text-text-secondary">
-            Thank you for reaching out. Our team will contact you shortly.
+            Inquiry sent successfully. Our team will contact you soon.
           </p>
           <button
             onClick={() => setStatus("idle")}
@@ -64,56 +159,94 @@ const InquiryForm = () => {
           </button>
         </motion.div>
       ) : (
-        <form ref={formRef} onSubmit={handleSubmit} className="relative z-10 space-y-5">
+        <form onSubmit={handleSubmit} className="relative z-10 space-y-5" noValidate>
           <div>
             <span className="eyebrow mb-3 block">Corporate Inquiry</span>
             <h3 className="text-3xl font-black tracking-tight text-text-primary">Plan a mobility solution</h3>
           </div>
 
-          <div className="relative">
-            <input
-              type="text"
-              id="name"
-              name="user_name"
-              required
-              placeholder=" "
-              className={fieldClass}
-            />
-            <label htmlFor="name" className={labelClass}>
-              Full Name
-            </label>
+          <div className="space-y-2">
+            <div className="relative">
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                minLength={2}
+                value={formValues.name}
+                onChange={handleFieldChange}
+                placeholder=" "
+                className={fieldClass}
+                aria-invalid={Boolean(errors.name)}
+                aria-describedby={errors.name ? "name-error" : undefined}
+              />
+              <label htmlFor="name" className={labelClass}>
+                Full Name
+              </label>
+            </div>
+            {errors.name && (
+              <p id="name-error" className={fieldErrorClass}>
+                <AlertCircle size={14} />
+                <span>{errors.name}</span>
+              </p>
+            )}
           </div>
 
-          <div className="relative">
-            <input
-              type="tel"
-              id="phone"
-              name="user_phone"
-              required
-              placeholder=" "
-              className={fieldClass}
-            />
-            <label htmlFor="phone" className={labelClass}>
-              Phone Number
-            </label>
+          <div className="space-y-2">
+            <div className="relative">
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                required
+                value={formValues.phone}
+                onChange={handleFieldChange}
+                placeholder=" "
+                className={fieldClass}
+                aria-invalid={Boolean(errors.phone)}
+                aria-describedby={errors.phone ? "phone-error" : undefined}
+              />
+              <label htmlFor="phone" className={labelClass}>
+                Phone Number
+              </label>
+            </div>
+            {errors.phone && (
+              <p id="phone-error" className={fieldErrorClass}>
+                <AlertCircle size={14} />
+                <span>{errors.phone}</span>
+              </p>
+            )}
           </div>
 
-          <div className="relative">
-            <textarea
-              id="message"
-              name="message"
-              required
-              rows={5}
-              placeholder=" "
-              className={fieldClass}
-            />
-            <label htmlFor="message" className={labelClass}>
-              Message
-            </label>
+          <div className="space-y-2">
+            <div className="relative">
+              <textarea
+                id="message"
+                name="message"
+                required
+                minLength={MIN_MESSAGE_LENGTH}
+                rows={5}
+                value={formValues.message}
+                onChange={handleFieldChange}
+                placeholder=" "
+                className={fieldClass}
+                aria-invalid={Boolean(errors.message)}
+                aria-describedby={errors.message ? "message-error" : undefined}
+              />
+              <label htmlFor="message" className={labelClass}>
+                Message
+              </label>
+            </div>
+            {errors.message && (
+              <p id="message-error" className={fieldErrorClass}>
+                <AlertCircle size={14} />
+                <span>{errors.message}</span>
+              </p>
+            )}
           </div>
 
           {status === "error" && (
-            <div className="flex items-center gap-2 rounded-2xl border border-red-400/20 bg-red-500/10 p-3 text-sm text-red-600">
+            <div role="alert" className="flex items-center gap-2 rounded-2xl border border-red-400/20 bg-red-500/10 p-3 text-sm text-red-600">
               <AlertCircle size={16} />
               <span>Something went wrong. Please try again.</span>
             </div>
@@ -127,7 +260,12 @@ const InquiryForm = () => {
             {status === "loading" ? (
               <>
                 <Loader2 size={18} className="animate-spin" />
-                <span>Sending</span>
+                <motion.span
+                  animate={{ opacity: [0.72, 1, 0.72] }}
+                  transition={{ duration: 1.4, repeat: Infinity, ease: "easeInOut" }}
+                >
+                  Sending Inquiry...
+                </motion.span>
               </>
             ) : (
               <>
