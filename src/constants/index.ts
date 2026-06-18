@@ -85,6 +85,6 @@ export const CLIENT_LOGOS = [
 export const CONTACT_DETAILS = {
   phone: "+91-9016326561",
   email: "shuklsatyam6906@gmail.com",
-  address: "T-15 3rd floor SAI ASHISH TRADE CENTRE, opp. POONYABHINI, Althan, Surat, Gujarat 395007",
+  address: "T-15 3rd floor SAI ASHISH TRADE CENTRE, OPP. POONYABHINI, ALTHAN, SURAT, GUJARAT 395007",
   whatsapp: "+919016326561",
 };
