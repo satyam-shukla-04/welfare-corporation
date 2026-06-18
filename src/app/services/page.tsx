@@ -12,7 +12,7 @@ const Services = () => {
         eyebrow="Our Services"
         title="Premium Mobility for Every Occasion"
         description="From daily commutes to executive travel, we provide tailored car rental services that prioritize your time and comfort."
-        image="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=2069&auto=format&fit=crop"
+        image="/images/hero/services-hero.png"
       />
 
       <section className="bg-white">

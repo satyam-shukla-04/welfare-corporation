@@ -12,7 +12,7 @@ const Fleet = () => {
         eyebrow="The Welfare Fleet"
         title="Pristine Vehicles, Professional Chauffeurs"
         description="All our vehicles undergo regular maintenance and safety checks to ensure a comfortable and secure journey every time you travel with us."
-        image="https://images.unsplash.com/photo-1555215695-3004980ad54e?q=80&w=2069&auto=format&fit=crop"
+        image="/images/hero/fleet-hero.png"
       />
 
       <section className="section-padding">
@@ -29,8 +29,8 @@ const Fleet = () => {
         <div className="container mx-auto grid gap-10 px-6 lg:grid-cols-2 lg:items-center">
           <div className="relative aspect-video overflow-hidden rounded-[2.5rem] shadow-premium">
             <Image
-              src="https://images.unsplash.com/photo-1600375104627-c94c4144eb7e?q=80&w=2070&auto=format&fit=crop"
-              alt="Car Interior"
+              src="/images/fleet/fleet-standards.png"
+              alt="Premium fleet standards and chauffeur inspection"
               fill
               className="object-cover"
             />

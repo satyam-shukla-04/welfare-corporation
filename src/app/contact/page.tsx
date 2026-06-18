@@ -2,7 +2,6 @@ import React from "react";
 import InquiryForm from "@/components/InquiryForm";
 import { CONTACT_DETAILS } from "@/constants";
 import { Clock, Mail, MapPin, MessageSquare, Phone } from "lucide-react";
-import { PageHero } from "@/components/PremiumUI";
 
 const Contact = () => {
   const details = [
@@ -14,13 +13,6 @@ const Contact = () => {
 
   return (
     <div className="flex flex-col bg-porcelain">
-      <PageHero
-        eyebrow="Connect with our team"
-        title="Get in Touch"
-        description="Whether you're looking for a one-time booking or a long-term corporate partnership, we're here to assist you."
-        image="https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=2069&auto=format&fit=crop"
-      />
-
       <section className="section-padding">
         <div className="container mx-auto grid gap-10 px-6 lg:grid-cols-[.9fr_1.1fr]">
           <div>
@@ -29,7 +21,7 @@ const Contact = () => {
               Corporate Details
             </h2>
             <p className="mt-6 text-lg leading-8 text-text-secondary">
-              Whether you're looking for a one-time booking or a long-term corporate partnership, we're here to assist you. Reach out to us through any of the following channels.
+              Whether you&apos;re looking for a one-time booking or a long-term corporate partnership, we&apos;re here to assist you. Reach out to us through any of the following channels.
             </p>
 
             <div className="mt-10 grid gap-4">

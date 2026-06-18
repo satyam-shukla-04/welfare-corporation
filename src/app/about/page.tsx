@@ -1,7 +1,26 @@
 import React from "react";
 import Image from "next/image";
-import { Eye, Shield, Target, Users } from "lucide-react";
+import { BriefcaseBusiness, Eye, Shield, Target, Users } from "lucide-react";
 import { PageHero, PremiumCTA, SectionHeader } from "@/components/PremiumUI";
+
+const leadership = [
+  {
+    name: "S.J. Shukla",
+    designation: "Co-Founder & Director",
+    description:
+      "Leading business operations and client relationships with a strong focus on service excellence, reliability, and long-term partnerships.",
+    // Replace with actual founder image when available.
+    image: "/images/leadership/sj-shukla-placeholder.png",
+  },
+  {
+    name: "Sandeep Singh",
+    designation: "Co-Founder & Director",
+    description:
+      "Driving transportation operations and mobility solutions while ensuring premium service standards for every client.",
+    // Replace with actual founder image when available.
+    image: "/images/leadership/sandeep-singh-placeholder.png",
+  },
+];
 
 const About = () => {
   return (
@@ -10,7 +29,7 @@ const About = () => {
         eyebrow="About Our Journey"
         title="About Our Journey"
         description="Setting new standards in corporate transportation with excellence, trust, and professionalism."
-        image="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop"
+        image="/images/about/about-hero.png"
       />
 
       <section className="section-padding">
@@ -18,8 +37,8 @@ const About = () => {
           <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
             <div className="relative aspect-square overflow-hidden rounded-[2.5rem] shadow-premium">
               <Image
-                src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format&fit=crop"
-                alt="Our Vision"
+                src="/images/about/corporate-operations.png"
+                alt="Corporate mobility operations team"
                 fill
                 className="object-cover"
               />
@@ -33,7 +52,7 @@ const About = () => {
                 Welfare Corporation (Infratech Solution) started with a simple belief: Corporate transportation should be more than just moving from point A to point B. It should be an experience marked by comfort, punctuality, and uncompromising professionalism.
               </p>
               <p className="mt-5 leading-8 text-text-secondary">
-                Over the years, we have grown from a local service provider to a trusted partner for some of India's largest enterprises. Our fleet and our team have evolved, but our core values remain the same: reliability, safety, and client-first approach.
+                Over the years, we have grown from a local service provider to a trusted partner for some of India&apos;s largest enterprises. Our fleet and our team have evolved, but our core values remain the same: reliability, safety, and client-first approach.
               </p>
               <div className="mt-8 grid grid-cols-2 gap-4">
                 {[
@@ -74,6 +93,46 @@ const About = () => {
                 <h3 className="text-3xl font-black">{item.title}</h3>
                 <p className={index === 1 ? "mt-5 leading-8 text-text-inverse-soft" : "mt-5 leading-8 text-text-secondary"}>{item.desc}</p>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-padding bg-porcelain">
+        <div className="container mx-auto px-6">
+          <SectionHeader
+            eyebrow="Leadership Team"
+            title="Meet Our Leadership"
+            description={"The people driving Welfare Corporation's commitment to reliability, professionalism, and corporate mobility excellence."}
+          />
+          <div className="mx-auto grid max-w-6xl gap-7 md:grid-cols-2">
+            {leadership.map((member) => (
+              <article
+                key={member.name}
+                className="group overflow-hidden rounded-[2rem] border border-white/70 bg-white/85 shadow-premium backdrop-blur-2xl transition-all duration-500 hover:-translate-y-2 hover:shadow-premium-hover md:rounded-[3rem]"
+              >
+                <div className="relative aspect-[4/5] overflow-hidden bg-primary">
+                  <Image
+                    src={member.image}
+                    alt={`${member.name}, ${member.designation}`}
+                    fill
+                    className="object-cover object-top transition duration-700 group-hover:scale-105"
+                    sizes="(min-width: 768px) 50vw, 100vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/68 via-primary/10 to-transparent" />
+                  <div className="absolute bottom-5 left-5 right-5">
+                    <span className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/18 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.22em] text-white backdrop-blur-xl">
+                      <BriefcaseBusiness size={14} />
+                      Executive Leadership
+                    </span>
+                  </div>
+                </div>
+                <div className="p-6 md:p-8">
+                  <p className="text-xs font-bold uppercase tracking-[0.22em] text-accent">{member.designation}</p>
+                  <h3 className="mt-3 text-3xl font-black tracking-tight text-text-primary md:text-4xl">{member.name}</h3>
+                  <p className="mt-5 leading-8 text-text-secondary">{member.description}</p>
+                </div>
+              </article>
             ))}
           </div>
         </div>

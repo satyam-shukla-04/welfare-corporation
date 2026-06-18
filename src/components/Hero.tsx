@@ -52,8 +52,8 @@ const Hero = () => {
         <motion.div style={{ y: imageY }} className="relative h-[350px] sm:h-[420px] md:h-[500px] lg:min-h-[540px]">
           <div className="absolute right-0 top-0 h-[70%] w-[94%] overflow-hidden rounded-[2rem] border border-white/70 bg-white/40 shadow-glow backdrop-blur-2xl sm:w-[88%] md:top-4 md:rounded-[3rem] lg:top-6 lg:w-[84%] lg:rounded-[3.5rem]">
             <Image
-              src="https://images.unsplash.com/photo-1555215695-3004980ad54e?q=80&w=1600&auto=format&fit=crop"
-              alt="Premium executive sedan"
+              src="/images/hero/home-executive-chauffeur.png"
+              alt="Executive chauffeur service with luxury sedan"
               fill
               className="object-cover object-center"
               priority
@@ -62,8 +62,8 @@ const Hero = () => {
           </div>
           <div className="absolute bottom-7 left-0 h-[42%] w-[58%] overflow-hidden rounded-[1.75rem] border border-white/70 bg-white/50 shadow-premium backdrop-blur-2xl sm:h-[46%] sm:rounded-[2.25rem] md:bottom-8 md:h-[48%] md:w-[56%] md:rounded-[2.75rem]">
             <Image
-              src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200&auto=format&fit=crop"
-              alt="Corporate office arrival"
+              src="/images/hero/home-operations-support.png"
+              alt="Corporate mobility operations support"
               fill
               className="object-cover"
             />

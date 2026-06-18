@@ -109,8 +109,8 @@ export default function Home() {
               className="relative min-h-[420px] overflow-hidden rounded-[2.5rem] bg-primary p-6 text-white shadow-premium md:min-h-[520px] md:rounded-[4rem] md:p-8"
             >
               <Image
-                src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1800&auto=format&fit=crop"
-                alt="Corporate Transportation"
+                src="/images/about/corporate-operations.png"
+                alt="Corporate transportation operations"
                 fill
                 className="object-cover opacity-35"
               />

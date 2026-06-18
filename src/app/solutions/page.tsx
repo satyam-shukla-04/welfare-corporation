@@ -42,7 +42,7 @@ const Solutions = () => {
         eyebrow="Tailored for Business"
         title="Comprehensive Corporate Mobility Solutions"
         description="We understand the complexities of corporate logistics. Our solutions are designed to scale with your business and provide unparalleled reliability."
-        image="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1976&auto=format&fit=crop"
+        image="/images/hero/solutions-hero.png"
       />
 
       <section className="section-padding bg-white">
